@@ -1,0 +1,302 @@
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+}
+
+.sidebar {
+  width: 248px;
+  flex: 0 0 248px;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 16px;
+  background: #172033;
+  color: #ffffff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px 36px;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.logo svg {
+  color: #f2b84b;
+}
+
+.menu-label {
+  padding: 0 14px 12px;
+  color: #8993a8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.sidebar nav,
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  color: #aab3c5;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: #293650;
+  color: #ffffff;
+}
+
+.nav-item.active svg {
+  color: #f2b84b;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.dashboard {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 44px clamp(24px, 5vw, 72px);
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+
+.page-header h1 {
+  margin-bottom: 8px;
+  color: #172033;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.1;
+}
+
+.page-header p,
+.stat-card p,
+.empty-message {
+  color: #7d8799;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.stat-card,
+.content-card {
+  border: 1px solid #e6eaf0;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(23, 32, 51, 0.04);
+}
+
+.stat-card {
+  padding: 22px;
+}
+
+.stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #7d8799;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stat-top svg {
+  color: #e0a632;
+}
+
+.stat-card h2 {
+  margin: 18px 0 5px;
+  color: #172033;
+  font-size: 30px;
+}
+
+.stat-card p {
+  font-size: 12px;
+}
+
+.content-card {
+  padding: 26px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.section-header h2 {
+  color: #172033;
+  font-size: 18px;
+}
+
+.section-header span {
+  color: #7d8799;
+  font-size: 13px;
+}
+
+.empty-message {
+  padding: 38px 0 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .app-layout {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .logo {
+    padding: 0 8px 18px;
+  }
+
+  .menu-label,
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .sidebar nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .nav-item {
+    justify-content: center;
+    padding: 10px 6px;
+    font-size: 12px;
+  }
+
+  .dashboard {
+    padding: 28px 16px;
+  }
+
+  .stats-grid {
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .content-card {
+    padding: 18px;
+  }
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item h3 {
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.task-item p {
+  font-size: 13px;
+  color: #929bad;
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status,
+.priority {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status.todo {
+  background: #eef2ff;
+  color: #4965bd;
+}
+
+.status.in_progress {
+  background: #fff4df;
+  color: #b7791f;
+}
+
+.status.done {
+  background: #e5f8ed;
+  color: #218653;
+}
+
+.priority.low {
+  color: #218653;
+}
+
+.priority.medium {
+  color: #b7791f;
+}
+
+.priority.high {
+  color: #d14343;
+}
+
+.error-message {
+  color: #d14343;
+  text-align: center;
+  padding: 30px;
+}
